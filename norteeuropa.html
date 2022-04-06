@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="acmeceo/norteeuropa.js" defer></script>
+    <title>Norte Europa</title>
+</head>
+
+
+<body>
+
+    <nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+          <i class="fa fa-remove"></i>
+        </a>
+        <div class="w3-bar-block w3-center">
+            <h1>Planos Acme co</h1><br>
+            <a href="http://127.0.0.1:5501/dentalacme.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Dental Sorriso</a>
+            <a href="http://127.0.0.1:5501/home.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">INICIO</a>
+        </div>
+    </nav>
+
+
+
+    <div class="w3-opacity">
+        <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
+        <div class="w3-clear"></div>
+        <header class="w3-center w3-margin-bottom">
+          <h1>Norte Europa</h1>
+          <p>Realize aqui o cadastros dos seus funcionários</p>
+        </header>
+        </div><br>
+
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+        <div style="overflow-x:auto;">
+        <table id="tableClient" class="records">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cpf</th>
+                    <th>data</th>
+                    <th>E-mail</th>
+
+                </tr>
+            </thead>
+            <tbody>
+        </div>        
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Cliente</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                <form id="form" class="modal-form">
+                    
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome do Cliente"required>
+                    <input type="text" id="cpf"  class="modal-field" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \ placeholder="CPF 123.456.789-01" title="Digite um CPF no formato: 000.000.000-00" required>
+                    <div>
+                        <lebel for ="data">Data de início/admissão:</lebel>
+                        <input type="date" id="data" class="modal-field"
+                        min="2015-05-20" pattern="[0-9]{2}/[0-9]{2}/[0-9]{4}"
+                        placeholder="data" required>
+                    </div>
+                    <input type="email" id="email" class="modal-field" placeholder="e-mail do Cliente" required>
+
+
+                </form>
+                <footer class="modal-footer">
+                    <button id="salvar" class="button green">Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+        // Toggle grid padding
+        function myFunction() {
+          var x = document.getElementById("myGrid");
+          if (x.className === "w3-row") {
+            x.className = "w3-row-padding";
+          } else { 
+            x.className = x.className.replace("w3-row-padding", "w3-row");
+          }
+        }
+        
+        // Open and close sidebar
+        function w3_open() {
+          document.getElementById("mySidebar").style.width = "100%";
+          document.getElementById("mySidebar").style.display = "block";
+        }
+        
+        function w3_close() {
+          document.getElementById("mySidebar").style.display = "none";
+        }
+        </script>
+    <footer>
+        Copyright &copy; Gabriel França
+    </footer>
+</body>
+
+</html>
